@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+
+
+<h:head>
+
+</h:head> 
+
+
+<body> 
+
+	<center>
+		<p:outputLabel style="color:green; font-size:18pt;" value="EL JUEGO DE LA VIDA"></p:outputLabel>
+	</center>
+	
+	<h:panelGrid columns="3" cellpadding="5">
+	
+	
+	
+	<p:panel  id="pnl1"                      
+                      style="width:520px;height:300px; color:green;"
+                      toggleable="true"
+                      closable="true"
+                      toggleSpeed="500"
+                      closeSpeed="500"
+                      widgetVar="panel1" >
+                      
+			   <p:inputTextarea style="color:green; font-size:12pt;" disabled="true" 
+			   value="#{initApp.description}" cols="47" rows="13"></p:inputTextarea>
+                      
+       </p:panel>
+
+
+		&nbsp;&nbsp;&nbsp;
+
+
+		<h:form>
+
+			<p:panel id="pnl" style="width:640px;height:540px;"
+				header="El juego de la vida">
+
+				<div class="tabbertab tabbertabdefault" id="tabEncabezado">
+
+					<center>
+						<iframe id="iframeHeader" style="height: 900px;" scrolling="no"
+							src="index.xhtml" frameBorder="0" width="955px" runat="server"></iframe>
+					</center>
+				</div>
+
+			</p:panel>
+			<p:draggable for="pnl"  opacity="0.5"/>
+
+
+		</h:form>
+
+	</h:panelGrid>
+	
+</body> 
+</html>

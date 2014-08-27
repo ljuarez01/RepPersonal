@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+
+	<script type="text/javascript">
+        function test()
+        {
+        	
+        	var boton = document.getElementById("btnStop");
+        	
+        	alert("Se detiene el juego.");
+        	boton.disabled = true;
+        	
+        	
+        }
+        
+        </script>
+
+</h:head>
+
+
+
+<body>
+
+	<h:panelGrid columns="2" style="margin-top:10px;">
+
+		<h:form>
+
+			<p:poll interval="1" listener="#{counterBean.increment}"
+				update="gauge" stop="#{counterBean.stop}" />
+
+			<p:inputTextarea cols="52" style="text-align:center" rows="18" id="gauge"  value="#{juego.boardStr}"></p:inputTextarea>
+
+		</h:form>
+
+		<br />
+
+		<h:form>
+
+			<p:commandButton id="btnStop" value="Detener"
+				action="#{counterBean.detenerr}" onclick="test()"
+				disabled="#{counterBean.detener}"></p:commandButton>
+
+		</h:form>
+		
+	</h:panelGrid>
+
+</body>
+</html>
